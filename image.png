@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>image.png</title>
+<style>
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; padding:56px 22px 80px;
+    background:#0d0d10; color:#e6e2d9;
+    font:17px/1.65 Georgia,"Times New Roman",serif;
+  }
+  .doc{max-width:34rem;margin:0 auto}
+
+  .slug{
+    font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+    letter-spacing:.08em; color:#ff6b47; margin:0 0 30px;
+  }
+  h1{font-size:34px;line-height:1.12;font-weight:normal;margin:0}
+  h1 .strike{text-decoration:line-through;text-decoration-thickness:2px;color:#6f6a60}
+  .sub{font-size:17px;color:#9a948a;margin:14px 0 0}
+
+  hr{border:0;border-top:1px solid #2a2a30;margin:34px 0 0}
+
+  h2{
+    font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+    letter-spacing:.1em;text-transform:uppercase;color:#6f6a60;margin:30px 0 14px;
+  }
+
+  pre{
+    margin:0;padding:16px 18px;background:#08080a;border:1px solid #22222a;
+    border-radius:4px;overflow-x:auto;
+    font:13px/1.8 ui-monospace,SFMono-Regular,Menlo,monospace;
+    color:#e6e2d9;
+  }
+  pre .hn{color:#7aa2f7}
+  pre .pn{color:#c0caf5}
+  pre .op{color:#6f6a60}
+  pre .kw{color:#ff6b47;font-weight:600}
+  pre .st{color:#9ece6a}
+
+  table{width:100%;border-collapse:collapse}
+  th{
+    text-align:left;font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+    letter-spacing:.1em;text-transform:uppercase;color:#6f6a60;
+    padding:0 0 10px;border-bottom:1px solid #3a3a44;
+  }
+  th:last-child{text-align:right}
+  td{padding:13px 0;border-bottom:1px solid #1e1e26;font-size:15px}
+  td:last-child{
+    text-align:right;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  .on {color:#9ece6a;font-weight:600}
+  .off{color:#6f6a60}
+  .hit{color:#ff6b47;font-weight:600}
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <p class="slug">Vulnerable</p>
+
+  <h1>You are reading a file your browser was told <span class="strike">not to show you</span>.</h1>
+  <p class="sub">
+    This response is an attachment named <em>image.png</em>. Safari and every
+    desktop browser hand it to the downloads folder. This webview drew it on screen
+    instead &mdash; under this site.
+  </p>
+
+  <hr>
+
+  <h2>Response</h2>
+<pre><span class="hn">Content-Disposition</span><span class="op">:</span> <span class="kw">attachment</span><span class="op">;</span> <span class="pn">filename</span><span class="op">=</span><span class="st">"image.png"</span></pre>
+
+  <h2>Capabilities reached on this page</h2>
+  <table>
+    <tr><th>Capability</th><th>Result</th></tr>
+    <tr><td>HTML parsed</td><td class="on">yes</td></tr>
+    <tr><td>CSS applied</td><td class="on">yes</td></tr>
+    <tr><td>JavaScript</td><td id="r-js" class="off">sandboxed</td></tr>
+  </table>
+
+</div>
+
+<script>
+  var n = document.getElementById('r-js');
+  n.className = 'hit';
+  n.textContent = 'executed';
+</script>
+</body>
+</html>
+
