@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" onload="
+  let m=new Map([[0,0],[1,1]]),i=m.entries();
+  https://i.next();
+  https://i.next();
+  m.delete(1);m.set(0,i);i=0;m.clear();
+">
+  <rect width="1" height="1"/>
+</svg>
